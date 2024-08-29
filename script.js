@@ -1,5 +1,7 @@
 var mouse = document.querySelector("#cursor")
 var mouseBlur = document.querySelector("#cursorBlur")
+var h4all = document.querySelectorAll("#nav h4")
+var arrow = document.querySelector("#arrow")
 
 document.addEventListener("mousemove", function (details) {
     mouse.style.left = details.x + 12 + "px"
@@ -35,22 +37,23 @@ gsap.to("#main", {
     }
 })
 
-var h4all = document.querySelectorAll("#nav h4")
-
 h4all.forEach(function (ele) {
     ele.addEventListener("mouseenter", function () {
         mouse.style.scale = 2
         mouse.style.border = "1px solid white"
         mouse.style.backgroundColor = "transparent"
+        ele.style.color = "#ADE023"
+        ele.style.scale = 1.3
     })
     ele.addEventListener("mouseleave", function () {
         mouse.style.scale = 1
         mouse.style.border = "0px solid #95C11E"
         mouse.style.backgroundColor = "#95C11E"
+        ele.style.color = "white"
+        ele.style.scale = 1 
     })
 })
 
-var arrow = document.querySelector("#arrow")
 arrow.addEventListener("mouseenter", () => {
     mouse.style.scale = 2
     mouse.style.border = "1px solid white"
